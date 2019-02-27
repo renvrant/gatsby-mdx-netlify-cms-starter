@@ -50,7 +50,6 @@ const Layout = (props) => (
           }}
         >
           <MDXProvider components={blogComponents}>
-            <MDXRenderer body={props.pageContext.frontmatter.sections[0].body}/>
             <main>{props.children}</main>
           </MDXProvider>
           <footer>
