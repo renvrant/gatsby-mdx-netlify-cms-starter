@@ -17,7 +17,7 @@ const scopeComponents = {
 }
 
 const FrontMatterRenderer = ({data}) => {
-  if (data.sections) {
+  if (data && data.sections) {
     return (
       <>
         {
@@ -60,7 +60,9 @@ const Layout = ({ children, pageContext }) => (
         >
           <MDXProvider components={blogComponents}>
             <main>{children}</main>
-            <FrontMatterRenderer data={pageContext.frontmatter}/>
+            <FrontMatterRenderer
+              data={pageContext && pageContext.frontmatter ?
+                pageContext.frontmatter : null} />
           </MDXProvider>
           <footer>
             © {new Date().getFullYear()}, Built with
