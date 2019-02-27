@@ -1,9 +1,20 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+
+export const query = graphql`
+  query {
+    fileName: file(relativePath: { eq: "images/myimage.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 400, maxHeight: 250) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }`
 
 const IndexPage = () => (
   <Layout>

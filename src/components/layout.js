@@ -1,11 +1,31 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
+import { MDXProvider } from '@mdx-js/tag'
+import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
 import Header from "./header"
+import Title from "./title"
 import "./layout.css"
 
-const Layout = ({ children }) => (
+const blogComponents = {
+  h1: props => <Title {...props} />,
+}
+
+const FrontMatterRenderer = ({data}) => {
+  if (data.sections) {
+    return (
+      <>
+        {data.sections.map(section => (
+          <MDXRenderer>{section.body}</MDXRenderer>
+      ))}
+      </>
+    );
+  }
+  return null;
+}
+
+const Layout = (props) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -16,7 +36,9 @@ const Layout = ({ children }) => (
         }
       }
     `}
-    render={data => (
+    render={data => {
+      console.log(data, props)
+      return (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
@@ -27,7 +49,10 @@ const Layout = ({ children }) => (
             paddingTop: 0,
           }}
         >
-          <main>{children}</main>
+          <MDXProvider components={blogComponents}>
+            <MDXRenderer body={props.pageContext.frontmatter.sections[0].body}/>
+            <main>{props.children}</main>
+          </MDXProvider>
           <footer>
             © {new Date().getFullYear()}, Built with
             {` `}
@@ -36,6 +61,7 @@ const Layout = ({ children }) => (
         </div>
       </>
     )}
+    }
   />
 )
 
