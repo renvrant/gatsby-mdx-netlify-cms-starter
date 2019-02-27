@@ -6,14 +6,21 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-- name: "pages"
-  folder: "pages"
-  label: "Pages"
+- name: "blog"
+  label: "Blog"
+  folder: "blog"
+  create: true
+  slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+  editor:
+    preview: false
   fields:
   - { label: "Title", name: "title", widget: "string" }
   - { label: "Publish Date", name: "date", widget: "datetime" }
   - { label: "Description", name: "description", widget: "string" }
   - { label: "Body", name: "body", widget: "markdown" }
+- name: "pages"
+  folder: "pages"
+  label: "Pages"
   files:
   - file: "src/pages/home/index.md"
     label: "Home"
@@ -76,37 +83,4 @@ collections:
     }
     - { label: "Title", name: "title", widget: "string" }
     - { label: "Body", name: "body", widget: "markdown" }
-  - file: "src/pages/products/index.md"
-    label: "Products Page"
-    name: "products"
-    fields:
-    - {
-      label: "Template Key",
-      name: "templateKey",
-      widget: "hidden",
-      default: "product-page",
-    }
-    - { label: Title, name: title, widget: string }
-    - { label: Image, name: image, widget: image }
-    - { label: Heading, name: heading, widget: string }
-    - { label: Description, name: description, widget: string }
-    - {
-      label: Intro,
-      name: intro,
-      widget: object,
-      fields:
-        [
-        { label: Heading, name: heading, widget: string },
-        { label: Description, name: description, widget: text },
-        {
-          label: Blurbs,
-          name: blurbs,
-          widget: list,
-          fields:
-            [
-            { label: Image, name: image, widget: image },
-            { label: Text, name: text, widget: text },
-            ],
-        },
-        ],
-    }
+
