@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import { MDXProvider } from '@mdx-js/tag'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import MDX from '@mdx-js/runtime'
 
 import Header from "./header"
 import Title from "./title"
@@ -12,20 +12,29 @@ const blogComponents = {
   h1: props => <Title {...props} />,
 }
 
+const scopeComponents = {
+  Title: props => <Title {...props } />
+}
+
 const FrontMatterRenderer = ({data}) => {
   if (data.sections) {
     return (
       <>
-        {data.sections.map(section => (
-          <MDXRenderer>{section.body}</MDXRenderer>
-      ))}
-      </>
-    );
+        {
+          data.sections.map((section, i) => (
+            <React.Fragment key={i}>
+              <h2 key={`${i}-title`}>{section.title}</h2>
+              <RenderSectionBody body={section.body} key={`${i}-body`} />
+            </React.Fragment>
+        ))}
+      </>)
   }
-  return null;
+  return null
 }
 
-const Layout = (props) => (
+const RenderSectionBody = ({body}) => (<MDX scope={scopeComponents} components={blogComponents}>{body}</MDX>)
+
+const Layout = ({ children, pageContext }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -37,7 +46,7 @@ const Layout = (props) => (
       }
     `}
     render={data => {
-      console.log(data, props)
+      console.log(data, pageContext, children)
       return (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
@@ -50,7 +59,8 @@ const Layout = (props) => (
           }}
         >
           <MDXProvider components={blogComponents}>
-            <main>{props.children}</main>
+            <main>{children}</main>
+            <FrontMatterRenderer data={pageContext.frontmatter}/>
           </MDXProvider>
           <footer>
             © {new Date().getFullYear()}, Built with
