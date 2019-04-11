@@ -1,6 +1,6 @@
 ---
 title: Home Page
-header_image: /img/dubai-united-arab-emirates.jpg
+templateKey: "home-page"
 sections:
   - body: >-
       Lorem ipsum dolor sit amet, **consectetur adipiscing elit.** Cras ornare
@@ -10,9 +10,8 @@ sections:
       laoreet tempor. Nulla non urna vel ligula suscipit bibendum vel sit amet
       mi. Pellentesque vulputate diam ac convallis euismod. Duis porta diam vel
       pellentesque malesuada
+      <CallToAction url="/cms-unreachable" align="center" bgColor="crimson">A Pure MDX Page</CallToAction>
 
-
-      # A cool header!
     title: Section 1
   - body: >-
       Nam lobortis quam a pretium eleifend. Integer eleifend convallis tempus.
@@ -22,10 +21,6 @@ sections:
       molestie, ut viverra nulla suscipit.
 
       Fusce sodales sem sed ipsum _fermentum_, et _scelerisque_ magna faucibus.
-
-
-      <Title>Another Test Title</Title>
-
 
       [Contact us today](mailto:test@test.io) to see more
     title: Section 2

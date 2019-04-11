@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Site Title`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Gatsby-MDX + Netlify-CMS Starter`,
+    description: `Starter for Gatsby-MDX + Netlify CMS`,
+    author: `@renvrant`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -20,7 +20,7 @@ module.exports = {
       options: {
         extensions: ['.mdx', '.md'],
         defaultLayouts: {
-          default: require.resolve(`${__dirname}/src/components/layout.js`)
+          default: require.resolve(`${__dirname}/src/page-templates/cms-entry.template.js`)
         }
       }
     },

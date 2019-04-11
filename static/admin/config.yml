@@ -1,32 +1,15 @@
 backend:
-  name: git-gateway
+  repo: renvrant/gatsby-mdx-netlify-cms-starter
   branch: master
 
-media_folder: static/img
+media_folder: uploads/img
 public_folder: /img
 
 collections:
-- name: "blog"
-  label: "Blog"
-  folder: "src/pages/blog"
-  create: true
-  slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-  fields:
-  - {
-    label: "Template Key",
-    name: "templateKey",
-    widget: "hidden",
-    default: "blog-post",
-  }
-  - { label: "Title", name: "title", widget: "string" }
-  - { label: "Publish Date", name: "date", widget: "datetime" }
-  - { label: "Description", name: "description", widget: "text" }
-  - { label: "Body", name: "body", widget: "markdown" }
-  - { label: "Tags", name: "tags", widget: "list" }
-- name: "pages"
-  label: "Pages"
+- name: "mainPages"
+  label: "Main Pages and Settings"
   files:
-  - file: "src/pages/home/index.md"
+  - file: "src/pages/home.md"
     label: "Home"
     name: "home"
     fields:
@@ -37,18 +20,6 @@ collections:
       default: "home-page",
     }
     - { label: Title, name: title, widget: "string" }
-    - { label: HeaderImage, name: header_image, widget: image }
-    - {
-      label: Sponsors,
-      name: sponsors,
-      widget: list,
-      fields:
-        [
-        { label: Type, name: type, widget: string },
-        { label: Url, name: url, widget: string },
-        { label: Logo, name: logo, widget: image },
-        ],
-    }
     - {
       label: Sections,
       name: sections,
@@ -57,144 +28,36 @@ collections:
         [
         { label: Title, name: title, widget: string },
         { label: Body, name: body, widget: markdown },
-        {
-          label: Testimonials,
-          name: testimonials,
-          widget: list,
-          {
-            label: List, name: column_list, widget: list,
-            field: { label: List Item, name: list_item, widget: string }
-          },
-          fields:
-            [
-            { label: Quote, name: quote, widget: string },
-            { label: Author, name: author, widget: string },
-            { label: Image, name: image, widget: image },
-            { label: Link, name: link, widget: string },
-            ],
-        },
-        ],
+        ]
     }
-  - file: "src/pages/about/index.md"
-    label: "About"
-    name: "about"
+  - file: "src/pages/config.md"
+    label: "Global Settings"
+    name: "config"
     fields:
-    - {
-      label: "Template Key",
-      name: "templateKey",
-      widget: "hidden",
-      default: "about-page",
-    }
-    - { label: "Title", name: "title", widget: "string" }
-    - { label: "Body", name: "body", widget: "markdown" }
-  - file: "src/pages/products/index.md"
-    label: "Products Page"
-    name: "products"
-    fields:
-    - {
-      label: "Template Key",
-      name: "templateKey",
-      widget: "hidden",
-      default: "product-page",
-    }
-    - { label: Title, name: title, widget: string }
-    - { label: Image, name: image, widget: image }
-    - { label: Heading, name: heading, widget: string }
-    - { label: Description, name: description, widget: string }
-    - {
-      label: Intro,
-      name: intro,
-      widget: object,
-      fields:
-        [
-        { label: Heading, name: heading, widget: string },
-        { label: Description, name: description, widget: text },
-        {
-          label: Blurbs,
-          name: blurbs,
-          widget: list,
-          fields:
-            [
-            { label: Image, name: image, widget: image },
-            { label: Text, name: text, widget: text },
-            ],
-        },
-        ],
-    }
-    - {
-      label: Main,
-      name: main,
-      widget: object,
-      fields:
-        [
-        { label: Heading, name: heading, widget: string },
-        { label: Description, name: description, widget: text },
-        {
-          label: Image1,
-          name: image1,
-          widget: object,
-          fields:
-            [
-            { label: Image, name: image, widget: image },
-            { label: Alt, name: alt, widget: string },
-            ],
-        },
-        {
-          label: Image2,
-          name: image2,
-          widget: object,
-          fields:
-            [
-            { label: Image, name: image, widget: image },
-            { label: Alt, name: alt, widget: string },
-            ],
-        },
-        {
-          label: Image3,
-          name: image3,
-          widget: object,
-          fields:
-            [
-            { label: Image, name: image, widget: image },
-            { label: Alt, name: alt, widget: string },
-            ],
-        },
-        ],
-    }
-    - {
-      label: Testimonials,
-      name: testimonials,
-      widget: list,
-      fields:
-        [
-        { label: Quote, name: quote, widget: string },
-        { label: Author, name: author, widget: string },
-        ],
-    }
-    - { label: Full_image, name: full_image, widget: image }
-    - {
-      label: Pricing,
-      name: pricing,
-      widget: object,
-      fields:
-        [
-        { label: Heading, name: heading, widget: string },
-        { label: Description, name: description, widget: string },
-        {
-          label: Plans,
-          name: plans,
-          widget: list,
-          fields:
-            [
-            { label: Plan, name: plan, widget: string },
-            { label: Price, name: price, widget: string },
-            {
-              label: Description,
-              name: description,
-              widget: string,
-            },
-            { label: Items, name: items, widget: list },
-            ],
-        },
-        ],
-    }
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "hidden-page",
+      }
+      - { label: Site Title, name: title, widget: "string" }
+      - { label: Site Description, name: desc, widget: "string" }
+      - { 
+          label: Site Menu,
+          name: main_nav,
+          widget: "relation",
+          collection: "content",
+          searchFields: ["title"],
+          valueField: "title",
+          displayFields: ["title"]
+        }
+      - { label: Twitter Link, name: twitter, widget: "string" }
+      - { label: Facebook Link, name: facebook, widget: "string" }
+- name: "content"
+  label: "Content Pages"
+  folder: "src/pages/content"
+  create: true
+  fields:
+  - { label: "Title", name: "title", widget: "string" }
+  - { label: "Description", name: "description", widget: "text" }
+  - { label: "Body", name: "body", widget: "markdown" }
