@@ -2,6 +2,26 @@
 
 Bootstrapped with the Gatsby starter, this starter aims to provide an example for using Gatsby-MDX with Netlify.
 
+## Developing Locally
+
+`npm run develop` @ localhost:8000
+
+Your development environment will read from your local .md files, but will *not* hot reload changes to the .md files. To make a change in the markdown and see it reflected:
+
+1. Stop the dev server
+2. Run `rm -rf .cache` to remove the gatsby cache
+3. Restart the dev server
+
+## Local Admin Panel
+
+While running the dev server:
+
+`localhost:8000/admin`
+
+Log in using your Netlify credentials. 
+
+Use the local admin to verify changes to your CMS config. Please note that the state of all markdown content will reflect the state of the github master branch, NOT your local changes.
+
 ## Project Overview
 
 Go through each of these directories to understand the project and extend from it.
@@ -17,6 +37,14 @@ Go through each of these directories to understand the project and extend from i
 *src/pages* - Editor content. All CMS-created pages will live in the content directory. Other pages may be modified from the CMS, but cannot be created or deleted.
 
 *static/admin* - CMS Editor configuration.
+
+## Templates and Template Keys
+
+The `CMSTemplate` component in conjunction with the hidden `templateKey` var controls which template will be used to render each content page. The `CMSTemplate` component will try to map the value of `templateKey` to a component, and fall back to a default if nothing is found. Please see the component for more details.
+
+## Markdown and Frontmatter
+
+Due to the way Netlify works, some CMS content is saved as Markdown `frontmatter` rather than actual markdown. Therefore, fields with a markdown editor will save a raw markdown string. It is up to our templates to correctly parse markdown. For this, we have the core component `<RenderMarkdown>` which will parse MDX upon receiving an MDX string and include supplied React components as appropriate. Under the hood, this uses [@mdx/runtime](https://mdxjs.com/advanced/runtime) so please look there fore configuration details.
 
 ---
 

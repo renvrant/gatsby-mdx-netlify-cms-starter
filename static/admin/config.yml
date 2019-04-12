@@ -1,4 +1,5 @@
 backend:
+  name: github
   repo: renvrant/gatsby-mdx-netlify-cms-starter
   branch: master
 
@@ -9,7 +10,7 @@ collections:
 - name: "mainPages"
   label: "Main Pages and Settings"
   files:
-  - file: "src/pages/home.md"
+  - file: "src/pages/index.md"
     label: "Home"
     name: "home"
     fields:
@@ -49,10 +50,9 @@ collections:
           collection: "content",
           searchFields: ["title"],
           valueField: "title",
-          displayFields: ["title"]
+          displayFields: ["title"],
+          multiple: true
         }
-      - { label: Twitter Link, name: twitter, widget: "string" }
-      - { label: Facebook Link, name: facebook, widget: "string" }
 - name: "content"
   label: "Content Pages"
   folder: "src/pages/content"

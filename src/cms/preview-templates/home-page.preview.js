@@ -1,5 +1,5 @@
 import React from "react"
-import { HomePageTemplate } from "../../templates/home-page.template"
+import { HomePageTemplate } from "../../page-templates/home-page.template"
 import { CatchError } from "../../core"
 
 export const HomePagePreview = ({ entry }) => (

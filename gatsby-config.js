@@ -21,7 +21,7 @@ module.exports = {
         extensions: ['.mdx', '.md'],
         defaultLayouts: {
           default: require.resolve(`${__dirname}/src/page-templates/cms-entry.template.js`)
-        }
+        },
       }
     },
     {
@@ -39,6 +39,11 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
-    `gatsby-plugin-netlify-cms` // make sure to keep it last in the array
+    {
+      resolve: `gatsby-plugin-netlify-cms`,
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`, // for custom preview in the Netlify CMS
+      },
+    },
   ],
 }

@@ -4,12 +4,10 @@ import {
   Heading,
   CallToAction,
   SmartLink,
-  // Testimonial
 } from "../components"
 
 export const CMS_SCOPE = {
   CallToAction: props => <CallToAction {...props} />,
-  // Testimonial: props => <Testimonial  {...props} />,
 }
 
 export const CMS_COMPONENTS = {
