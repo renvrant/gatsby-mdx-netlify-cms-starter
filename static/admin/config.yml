@@ -43,16 +43,16 @@ collections:
       }
       - { label: Site Title, name: title, widget: "string" }
       - { label: Site Description, name: desc, widget: "string" }
-      - { 
-          label: Site Menu,
-          name: main_nav,
-          widget: "relation",
-          collection: "content",
-          searchFields: ["title"],
-          valueField: "slug",
-          displayFields: ["title"],
-          multiple: true
-        }
+      - {
+        label: Menu,
+        name: menu_nav,
+        widget: list,
+        fields:
+          [
+          { label: Text, name: text, widget: string },
+          { label: URL, name: url, widget: string },
+          ]
+      }
 - name: "content"
   label: "Content Pages"
   folder: "src/pages/content"
