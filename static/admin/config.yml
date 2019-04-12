@@ -49,7 +49,7 @@ collections:
           widget: "relation",
           collection: "content",
           searchFields: ["title"],
-          valueField: "title",
+          valueField: "slug",
           displayFields: ["title"],
           multiple: true
         }

@@ -12,9 +12,6 @@ sections:
       pellentesque malesuada
       <CallToAction url="/cms-unreachable" align="center" bgColor="crimson">A Pure MDX Page</CallToAction>
 
-      
-      <CallToAction url="/content/example-content-creation" align="center" bgColor="midnightblue">A CMS created page</CallToAction>
-
     title: Section 1
   - body: >-
       Nam lobortis quam a pretium eleifend. Integer eleifend convallis tempus.
