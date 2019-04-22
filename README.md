@@ -2,6 +2,8 @@
 
 Bootstrapped with the Gatsby starter, this starter aims to provide an example for using Gatsby-MDX with Netlify.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e556df2f-659a-4d2d-9466-8575e6976936/deploy-status)](https://app.netlify.com/sites/mystifying-mclean-5c7fce/deploys)
+
 ## Developing Locally
 
 `npm run develop` @ localhost:8000
