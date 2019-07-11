@@ -19,7 +19,7 @@ export const CallToAction = ({ url, children, align, bgColor, ...other }) => {
   )
 
   return align === "center" ? (
-    <span style={{display: "flex", justifyContent: "center"}}>{link}</span>
+    <span style={{ display: "flex", justifyContent: "center" }}>{link}</span>
   ) : (
     link
   )

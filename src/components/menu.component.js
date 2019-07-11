@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import { safelyGetSiteConfig } from "../cms"
 
@@ -22,9 +22,15 @@ export const Menu = () => (
     query={query}
     render={data => {
       const menu = safelyGetSiteConfig(data.sitePage).menu_nav || []
-      return <ul>
-        {menu.map((item, i) => <li key={i}><a href={item.url}>{item.text}</a></li>)}
-      </ul>
+      return (
+        <ul>
+          {menu.map((item, i) => (
+            <li key={i}>
+              <a href={item.url}>{item.text}</a>
+            </li>
+          ))}
+        </ul>
+      )
     }}
   />
 )

@@ -1,12 +1,8 @@
 import React from "react"
 
-import {
-  Heading,
-  CallToAction,
-  SmartLink,
-} from "../components"
+import { Heading, CallToAction, SmartLink } from "../components"
 
-// Include all components that will be parsed by MDX as React components here. 
+// Include all components that will be parsed by MDX as React components here.
 // Any React component you'd like to allow your editors to use should be placed here.
 export const CMS_SCOPE = {
   CallToAction: props => <CallToAction {...props} />,
