@@ -1,8 +1,17 @@
 # Gatsby + Gastby-MDX + Netlify-CMS Starter
 
-Bootstrapped with the Gatsby starter, this starter aims to provide an example for using Gatsby-MDX with Netlify.
+Extended from the Gatsby starter, this starter aims to provide an example for using Gatsby-MDX with Netlify.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e556df2f-659a-4d2d-9466-8575e6976936/deploy-status)](https://app.netlify.com/sites/mystifying-mclean-5c7fce/deploys)
+
+## Features
+
+- Swap page template based on CMS key, allowing editors to choose different page templates
+- Support CMS configurations that save markdown in frontmatter fields with an mdx-enabled markdown renderer component (with example)
+- Hide pages from being editable by the CMS
+- Extend Netlify CMS editor to support the insertion of a React component, allowing your editors to include things like buttons or testimonials
+- Swap default HTML elements in posts for React components, allowing for greater control
+- All the usual Gatsby + MDX stuff
 
 ## Developing Locally
 
@@ -28,13 +37,13 @@ Use the local admin to verify changes to your CMS config. Please note that the s
 
 Go through each of these directories to understand the project and extend from it.
 
-*src/cms* - Utilities for working with FrontMatter which Netlify CMS depends on, example previews and example widget registration. This folder also includes a whitelist of components that will be included in the MDX render scope.
+*src/cms* - Utilities for working with FrontMatter which Netlify CMS depends on, example previews and example widget registration. This folder also includes a whitelist of components that will be included in the MDX render scope in **cms-components.constants.js**.
 
 *src/components* - Components, mostly default with a few additions such as a call to action and a smart link.
 
 *src/core* - Core components to render markdown, catch errors
 
-*src/page-templates* - Templates for CMS pages and an entry template component that will be used to determine what template should be shown where.
+*src/page-templates* - Templates for CMS pages and an entry template component that will be used to determine what template should be shown where. Look in particular at **cms-entry.template.js**
 
 *src/pages* - Editor content. All CMS-created pages will live in the content directory. Other pages may be modified from the CMS, but cannot be created or deleted.
 

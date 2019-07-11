@@ -6,6 +6,9 @@ import NotFoundPage from "./not-found.template"
 import { AppLayout } from "../app-layout.component"
 import { safelyGetFrontMatter } from "../cms"
 
+// Extend this template map to allow your users to choose a page layout from the CMS
+// If you're only looking for how to specify a different template per content folder, see:
+// https://www.gatsbyjs.org/packages/gatsby-mdx/#installation
 const componentTemplateMap = {
   "home-page": HomePage,
   "hidden-page": NotFoundPage,

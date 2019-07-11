@@ -1,31 +1,31 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "gatsby-mdx-netlify-cms-starter",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "Extension of the default Gatsby starter to add MDX and Netlify CMS",
+  "version": "0.2.0",
+  "author": "Renee Blackburn <rvrant@gmail.com>",
   "dependencies": {
-    "@mdx-js/mdx": "^0.18.0",
-    "@mdx-js/runtime": "^0.18.1",
+    "@mdx-js/mdx": "^0.18.2",
+    "@mdx-js/runtime": "^0.18.2",
     "@mdx-js/tag": "^0.18.0",
-    "gatsby": "^2.3.25",
-    "gatsby-image": "^2.0.30",
-    "gatsby-mdx": "^0.4.0",
+    "gatsby": "^2.13.14",
+    "gatsby-image": "^2.2.5",
+    "gatsby-mdx": "^0.4.5",
     "gatsby-plugin-manifest": "^2.0.19",
-    "gatsby-plugin-netlify-cms": "^3.0.12",
-    "gatsby-plugin-offline": "^2.0.24",
-    "gatsby-plugin-react-helmet": "^3.0.7",
+    "gatsby-plugin-netlify-cms": "^3.0.18",
+    "gatsby-plugin-offline": "^2.2.2",
+    "gatsby-plugin-react-helmet": "^3.1.1",
     "gatsby-plugin-sharp": "^2.0.35",
-    "gatsby-source-filesystem": "^2.0.23",
+    "gatsby-source-filesystem": "^2.1.4",
     "gatsby-transformer-sharp": "^2.1.14",
-    "netlify-cms": "^2.9.1",
+    "netlify-cms": "^2.9.5",
     "prop-types": "^15.7.2",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
-    "react-helmet": "^5.2.0"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "prettier": "^1.16.4"
+    "prettier": "^1.18.2"
   },
   "keywords": [
     "gatsby"
@@ -41,7 +41,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/renvrant/gatsby-mdx-netlify-cms-starter"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"

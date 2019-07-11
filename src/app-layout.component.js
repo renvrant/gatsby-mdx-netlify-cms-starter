@@ -3,8 +3,8 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
 import { Header, Menu } from "./components"
-import "./app.css"
 
+// Global application wrapper
 export const AppLayout = ({ children, pageContext }) => (
   <StaticQuery
     query={graphql`

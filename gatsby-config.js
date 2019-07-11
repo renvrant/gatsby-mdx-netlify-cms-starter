@@ -20,6 +20,9 @@ module.exports = {
       options: {
         extensions: ['.mdx', '.md'],
         defaultLayouts: {
+          // This entry template will switch the page template based on
+          // a frontmatter value provided in the CMS, allowing users to
+          // choose different template layouts.
           default: require.resolve(`${__dirname}/src/page-templates/cms-entry.template.js`)
         },
       }
