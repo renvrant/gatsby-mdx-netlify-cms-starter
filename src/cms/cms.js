@@ -1,4 +1,4 @@
-import CMS from "netlify-cms"
+import CMS from "netlify-cms-app"
 
 import { HomePagePreview, DefaultPagePreview } from "./preview-templates"
 import { ctaEditorConfig } from "./editor-components"
