@@ -6,16 +6,18 @@ Extended from the Gatsby starter, this starter aims to provide an example for us
 
 ## Features
 
+- Support React Components in your CMS editing workflow through MDX
+- Read .MD and .MDX files as pages automatically
 - Swap page template based on CMS key, allowing editors to choose different page templates
 - Support CMS configurations that save markdown in frontmatter fields with an mdx-enabled markdown renderer component (with example)
 - Hide pages from being editable by the CMS
 - Extend Netlify CMS editor to support the insertion of a React component, allowing your editors to include things like buttons or testimonials
 - Swap default HTML elements in posts for React components, allowing for greater control
-- All the usual Gatsby + MDX stuff
+- All the other Gatsby + MDX stuff
 
 ## Developing Locally
 
-`npm run develop` @ localhost:8000
+`yarn develop` or `npm run develop` @ localhost:8000
 
 Your development environment will read from your local .md files, but will *not* hot reload changes to the .md files. To make a change in the markdown and see it reflected:
 
@@ -23,7 +25,7 @@ Your development environment will read from your local .md files, but will *not*
 2. Run `rm -rf .cache` to remove the gatsby cache
 3. Restart the dev server
 
-## Local Admin Panel
+### Local Admin Panel
 
 While running the dev server:
 
@@ -32,6 +34,10 @@ While running the dev server:
 Log in using your Netlify credentials. 
 
 Use the local admin to verify changes to your CMS config. Please note that the state of all markdown content will reflect the state of the github master branch, NOT your local changes.
+
+## Building
+
+`yarn build` or `npm run build`
 
 ## Project Overview
 

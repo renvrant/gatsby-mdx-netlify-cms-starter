@@ -15,6 +15,7 @@ export const ctaEditorConfig = {
       name: "bgColor",
       widget: "select",
       options: ["crimson", "seagreen", "rebeccapurple", "midnightblue"],
+      default: "rebeccapurple"
     },
   ],
   // Pattern to identify a block as being an instance of this component

@@ -3,25 +3,18 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import { CatchError } from "./catch-error.component"
+import { CMS_COMPONENTS, CMS_SHORTCODES } from "../cms"
 
 /* Use this component to parse markdown using MDX. See MDX runtime for details.
+ * The map provided to the components prop instructs MDX on how to render your HTML and
+ * custom React components.
  *
  * @md: string - Markdown to be parsed
- *
- * @scope: Object - Object wherein keys should be React component names that
- * should be parsed with MDX and values should be a function that accepts
- * props and returns the desired component.
- * e.g. { Title: props => <Title ...props />
- *
- * @components: Object - Object wherein keys should be supported HTML tags and
- * values should be a function returning the React component which should render
- * them.
- * eg. { h1: props => <Title ...props />
  */
 
-export const RenderMarkdown = ({ md, scope, components }) => (
+export const RenderMarkdown = ({ md }) => (
   <CatchError>
-    <MDX scope={scope} components={components}>
+    <MDX components={{...CMS_COMPONENTS, ...CMS_SHORTCODES}}>
       {md}
     </MDX>
   </CatchError>
@@ -29,12 +22,8 @@ export const RenderMarkdown = ({ md, scope, components }) => (
 
 RenderMarkdown.defaultProps = {
   md: "",
-  scope: {},
-  components: {},
 }
 
 RenderMarkdown.propTypes = {
   md: PropTypes.string.isRequired,
-  scope: PropTypes.object,
-  components: PropTypes.object,
 }

@@ -5,8 +5,6 @@ import { RenderMarkdown } from "../core"
 import {
   safelyGetFrontMatter,
   withFallback,
-  CMS_SCOPE,
-  CMS_COMPONENTS,
 } from "../cms"
 
 export const HomePageTemplate = ({ title, sections }) => (
@@ -19,8 +17,6 @@ export const HomePageTemplate = ({ title, sections }) => (
           <h2>{section.title}</h2>
           <RenderMarkdown
             md={section.body}
-            scope={CMS_SCOPE}
-            components={CMS_COMPONENTS}
           />
           <hr />
         </section>
