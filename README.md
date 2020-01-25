@@ -4,6 +4,9 @@ Extended from the Gatsby starter, this starter aims to provide an example for us
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e556df2f-659a-4d2d-9466-8575e6976936/deploy-status)](https://app.netlify.com/sites/mystifying-mclean-5c7fce/deploys)
 
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/renvrant/gatsby-mdx-netlify-cms-starter)
+
 ## Features
 
 - Support React Components in your CMS editing workflow through MDX
@@ -157,8 +160,5 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 - **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
 
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
 
 <!-- AUTO-GENERATED-CONTENT:END -->
